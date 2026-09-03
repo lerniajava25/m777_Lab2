@@ -14,7 +14,9 @@ public class Renderer {
             for (int y = 0; y < height; y++) {
                 for (int x = 0; x < width; x++) {
 
-                    double screenX = (2.0 * x / width) - 1.0;
+                    double aspectRatio = (double) width / height;
+                    double screenX = ((2.0 * x / width) - 1.0) * aspectRatio;
+
                     double screenY = 1.0 - (2.0 * y / height);
 
                     Vector3D direction = new Vector3D(screenX, screenY, 1.0);
